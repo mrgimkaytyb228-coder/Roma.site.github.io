@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%AA%90%3C/text%3E%3C/svg%3E">
+<title>Рома-лох</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--space-0:#010414;--space-1:#04133f;--space-2:#0a2a8f;--glow:#4fb3ff;--ice:#e8f4ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--space-0:#010414;--space-1:#04133f;--space-2:#0a2a8f;--glow:#4fb3ff;--ice:#e8f4ff}}
+:root[data-theme="dark"]{--space-0:#010414;--space-1:#04133f;--space-2:#0a2a8f;--glow:#4fb3ff;--ice:#e8f4ff}
+*{box-sizing:border-box;margin:0}
+html{min-height:100%}body{min-height:100vh;overflow-x:hidden}
+body{background:radial-gradient(ellipse at 50% 120%,var(--space-2) 0%,var(--space-1) 45%,var(--space-0) 100%) fixed;color:var(--ice);font-family:"Unbounded","Arial Black",Impact,sans-serif}
+.nebula{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.nebula i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 22s ease-in-out infinite alternate}
+.nebula i:nth-child(1){width:60vmax;height:60vmax;left:-15vmax;top:-20vmax;background:#1d4ed8}
+.nebula i:nth-child(2){width:50vmax;height:50vmax;right:-15vmax;bottom:-18vmax;background:#0ea5e9;animation-duration:28s}
+.nebula i:nth-child(3){width:35vmax;height:35vmax;left:30%;top:35%;background:#312e81;opacity:.4;animation-duration:34s}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.2)}}
+#sky{position:fixed;inset:0;width:100%;height:100%}
+.saturn{position:fixed;width:min(120vmin,760px);right:-4vmin;bottom:9vh;overflow:visible;animation:floatS 8s ease-in-out infinite;translate:0 calc(var(--sy,0)*-.12px);transition:translate .35s ease-out}
+@keyframes float{50%{transform:translateY(-3vmin) rotate(3deg)}}
+.clouds{animation:clouds 26s linear infinite}
+@keyframes clouds{to{transform:translateX(-140px)}}
+.shine{animation:shine 5s ease-in-out infinite alternate}
+@keyframes shine{from{opacity:.25}to{opacity:.9}}
+main{position:relative;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 4vw}
+h1{font-weight:900;font-size:clamp(2.6rem,13.5vw,12rem);line-height:1;letter-spacing:-.02em;white-space:nowrap;filter:drop-shadow(0 0 18px rgba(79,179,255,.75)) drop-shadow(0 0 60px rgba(30,100,255,.6))}
+h1 span{display:inline-block;color:transparent;background:linear-gradient(100deg,#ffffff 0%,#9fd8ff 25%,#3b82f6 50%,#9fd8ff 75%,#ffffff 100%) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;opacity:0;animation:drop 1s cubic-bezier(.2,1.4,.4,1) forwards,wave 3s ease-in-out infinite,sheen 4s linear infinite;animation-delay:calc(var(--i)*.12s),calc(1.4s + var(--i)*.14s),0s}
+@keyframes drop{from{opacity:0;transform:translateY(-60vh) scale(2) rotate(-20deg);filter:blur(14px)}to{opacity:1;transform:none;filter:none}}
+@keyframes wave{0%,100%{transform:translateY(0)}50%{transform:translateY(-.1em)}}
+@keyframes sheen{to{background-position:300% 0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important}h1 span{opacity:1}.why article,.hint,.note,.author figure,.author p{opacity:1;transform:none}}
+.hint{position:absolute;left:0;right:0;bottom:max(4vh,env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:clamp(.8rem,2.4vw,1rem);font-weight:500;color:#bfe6ff;opacity:0;animation:fadein 1s 2.4s forwards,nudge 2s ease-in-out 2.4s infinite}
+@keyframes fadein{to{opacity:1}}
+@keyframes nudge{50%{transform:translateY(8px)}}
+.why{position:relative;max-width:1000px;margin:0 auto;padding:12vh 5vw 18vh;display:flex;flex-direction:column;gap:clamp(1.5rem,6vh,3.5rem)}
+.why h2{font-size:clamp(2rem,7vw,4.5rem);font-weight:900;line-height:1.1;text-align:center;margin-bottom:2vh;color:var(--ice);text-shadow:0 0 30px rgba(79,179,255,.85),0 0 80px rgba(30,100,255,.6)}
+.why article{display:flex;align-items:center;gap:clamp(.8rem,3vw,2.5rem);padding:clamp(1.1rem,4vw,2.5rem);border-radius:28px;background:rgba(8,24,80,.5);border:1px solid rgba(140,200,255,.35);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 0 50px rgba(30,100,255,.35),inset 0 0 40px rgba(79,179,255,.12);opacity:0;transform:translateY(60px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.9,.3,1)}
+.why article.in{opacity:1;transform:none}
+.n{font-size:clamp(3.2rem,12vw,8rem);font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:2px #9fd8ff;filter:drop-shadow(0 0 14px rgba(79,179,255,.8))}
+.t{flex:1;min-width:0;font-size:clamp(1.05rem,3.6vw,2.2rem);font-weight:800;line-height:1.25}
+.e{font-size:clamp(2.2rem,8vw,5rem);display:inline-block;animation:wob 3s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(12deg) scale(1.12)}}
+.author{position:relative;display:flex;flex-direction:column;align-items:center;gap:1.6rem;padding:4vh 5vw calc(10vh + env(safe-area-inset-bottom,0px));text-align:center}
+.author figure{width:min(94vw,520px);aspect-ratio:540/300;opacity:0;transform:translateY(50px) scale(.94);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.9,.3,1)}
+@keyframes floatS{50%{transform:translateY(-2.5vmin)}}
+.author figure.in,.author p.in{opacity:1;transform:none}
+.author img{display:block;width:100%;height:100%;object-fit:cover}
+.author p{font-size:clamp(.95rem,3.2vw,1.5rem);font-weight:800;line-height:1.35;max-width:22em;color:var(--ice);text-shadow:0 0 24px rgba(79,179,255,.8);opacity:0;transform:translateY(30px);transition:opacity .9s .2s ease,transform .9s .2s cubic-bezier(.2,.9,.3,1)}
+.note{position:absolute;left:0;right:0;top:4vh;padding:0 5vw;font-size:clamp(.85rem,2.8vw,1.3rem);font-weight:500;font-style:italic;color:#cfe8ff;text-shadow:0 0 18px rgba(79,179,255,.9);opacity:0;animation:fadein 1.6s 1.2s ease forwards}
+.author p{padding:.9em 1.3em;border-radius:22px;background:rgba(4,19,63,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(140,200,255,.3)}
+</style>
+</head>
+<body>
+<div class="nebula"><i></i><i></i><i></i></div>
+<canvas id="sky"></canvas>
+
+<svg class="saturn" viewBox="-270 -150 540 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<radialGradient id="f-glow"><stop offset=".55" stop-color="#4fb3ff" stop-opacity=".4"/><stop offset="1" stop-color="#4fb3ff" stop-opacity="0"/></radialGradient>
+<radialGradient id="f-shade" cx=".32" cy=".28" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#030a35" stop-opacity=".5"/></radialGradient>
+<linearGradient id="f-ring" x1="0" x2="1"><stop offset="0" stop-color="#7a5a35"/><stop offset=".5" stop-color="#f0d9a8"/><stop offset="1" stop-color="#7a5a35"/></linearGradient>
+<clipPath id="f-pc"><circle r="125"/></clipPath>
+<clipPath id="f-top"><rect x="-300" y="-200" width="600" height="200"/></clipPath>
+<clipPath id="f-bot"><rect x="-300" y="0" width="600" height="200"/></clipPath>
+<clipPath id="f-out"><path clip-rule="evenodd" d="M-300,-200H300V200H-300Z M-125,0a125,125 0 1 0 250,0a125,125 0 1 0 -250,0Z"/></clipPath>
+<g id="f-rings" fill="none">
+<ellipse rx="205" ry="56" stroke="url(#f-ring)" stroke-width="14" opacity=".9"/>
+<ellipse rx="180" ry="49" stroke="url(#f-ring)" stroke-width="8" opacity=".75"/>
+<ellipse rx="158" ry="43" stroke="#e9cf9c" stroke-width="10" opacity=".85"/>
+<ellipse class="shine" rx="220" ry="60" stroke="#bfe6ff" stroke-width="1.5"/>
+</g>
+</defs>
+<circle r="210" fill="url(#f-glow)"/>
+<g transform="rotate(-18)"><g clip-path="url(#f-top)"><use href="#f-rings"/></g></g>
+<g clip-path="url(#f-pc)">
+<image href="planet.jpg" x="-125" y="-125" width="250" height="250" preserveAspectRatio="xMidYMid slice"/>
+<g class="clouds" fill="#fff" opacity=".08"><ellipse cx="-420" cy="-80" rx="48" ry="5.0"/><ellipse cx="-280" cy="-80" rx="48" ry="5.0"/><ellipse cx="-140" cy="-80" rx="48" ry="5.0"/><ellipse cx="0" cy="-80" rx="48" ry="5.0"/><ellipse cx="140" cy="-80" rx="48" ry="5.0"/><ellipse cx="280" cy="-80" rx="48" ry="5.0"/><ellipse cx="420" cy="-80" rx="48" ry="5.0"/><ellipse cx="-373" cy="-45" rx="40" ry="3.5"/><ellipse cx="-233" cy="-45" rx="40" ry="3.5"/><ellipse cx="-93" cy="-45" rx="40" ry="3.5"/><ellipse cx="47" cy="-45" rx="40" ry="3.5"/><ellipse cx="187" cy="-45" rx="40" ry="3.5"/><ellipse cx="327" cy="-45" rx="40" ry="3.5"/><ellipse cx="467" cy="-45" rx="40" ry="3.5"/><ellipse cx="-326" cy="-8" rx="52" ry="6.0"/><ellipse cx="-186" cy="-8" rx="52" ry="6.0"/><ellipse cx="-46" cy="-8" rx="52" ry="6.0"/><ellipse cx="94" cy="-8" rx="52" ry="6.0"/><ellipse cx="234" cy="-8" rx="52" ry="6.0"/><ellipse cx="374" cy="-8" rx="52" ry="6.0"/><ellipse cx="514" cy="-8" rx="52" ry="6.0"/><ellipse cx="-419" cy="30" rx="44" ry="4.0"/><ellipse cx="-279" cy="30" rx="44" ry="4.0"/><ellipse cx="-139" cy="30" rx="44" ry="4.0"/><ellipse cx="1" cy="30" rx="44" ry="4.0"/><ellipse cx="141" cy="30" rx="44" ry="4.0"/><ellipse cx="281" cy="30" rx="44" ry="4.0"/><ellipse cx="421" cy="30" rx="44" ry="4.0"/><ellipse cx="-372" cy="68" rx="50" ry="5.0"/><ellipse cx="-232" cy="68" rx="50" ry="5.0"/><ellipse cx="-92" cy="68" rx="50" ry="5.0"/><ellipse cx="48" cy="68" rx="50" ry="5.0"/><ellipse cx="188" cy="68" rx="50" ry="5.0"/><ellipse cx="328" cy="68" rx="50" ry="5.0"/><ellipse cx="468" cy="68" rx="50" ry="5.0"/></g>
+<circle r="125" fill="url(#f-shade)"/>
+</g>
+<circle r="124" fill="none" stroke="#9fd8ff" stroke-opacity=".5" stroke-width="1.5"/>
+<g transform="rotate(-18)"><g clip-path="url(#f-bot)"><g clip-path="url(#f-out)"><use href="#f-rings"/></g><g clip-path="url(#f-pc)" opacity=".3"><use href="#f-rings"/></g></g></g>
+</svg>
+
+<main><div class="note">Основано на реальных событиях</div><h1 aria-label="Рома-лох"><span style="--i:0">Р</span><span style="--i:1">о</span><span style="--i:2">м</span><span style="--i:3">а</span><span style="--i:4">-</span><span style="--i:5">л</span><span style="--i:6">о</span><span style="--i:7">х</span></h1><div class="hint">Почему? Листай вниз<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div></main>
+<section class="why"><h2>Почему он лох?</h2>
+<article><span class="n">1</span><p class="t">Потому что он пердит, как свинья</p><span class="e">🐷</span></article>
+<article><span class="n">2</span><p class="t">Потому что у него длинные уши</p><span class="e">🐰</span></article>
+<article><span class="n">3</span><p class="t">Потому что у него нос, как у коровы</p><span class="e">🐮</span></article>
+</section>
+<footer class="author"><p>Автор Гусаков Дмитрий Иванович 2007 года</p></footer>
+
+<script>
+(function(){
+var c=document.getElementById('sky'),g=c.getContext('2d'),W,H,stars=[],shoots=[];
+function resize(){var d=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;g.setTransform(d,0,0,d,0,0);
+stars=[];for(var i=0,n=Math.round(W*H/2600);i<n;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.2,v:Math.random()*.18+.02,p:Math.random()*6.28,t:Math.random()*2+.6})}
+resize();addEventListener('resize',resize);
+var t0=0;
+function frame(t){
+g.clearRect(0,0,W,H);
+for(var i=0;i<stars.length;i++){var s=stars[i];s.x-=s.v;if(s.x<0)s.x=W;
+var a=.45+.55*Math.sin(t/1000*s.t+s.p);g.globalAlpha=Math.max(a,.1);g.fillStyle=s.r>1.1?'#cfe8ff':'#ffffff';
+g.beginPath();g.arc(s.x,s.y,s.r,0,6.283);g.fill()}
+if(Math.random()<.008&&shoots.length<2)shoots.push({x:Math.random()*W*1.1,y:Math.random()*H*.4,l:0});
+for(var j=shoots.length-1;j>=0;j--){var k=shoots[j];k.l+=1;k.x-=14;k.y+=6;
+var al=1-k.l/45;if(al<=0){shoots.splice(j,1);continue}
+var gr=g.createLinearGradient(k.x,k.y,k.x+110,k.y-47);gr.addColorStop(0,'rgba(190,230,255,'+al+')');gr.addColorStop(1,'rgba(190,230,255,0)');
+g.globalAlpha=1;g.strokeStyle=gr;g.lineWidth=2;g.beginPath();g.moveTo(k.x,k.y);g.lineTo(k.x+110,k.y-47);g.stroke()}
+requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function(){var r=document.documentElement,q=false;
+function up(){q=false;r.style.setProperty('--sy',Math.round(window.scrollY))}
+addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(up)}},{passive:true});
+var els=document.querySelectorAll('.why article,.author figure,.author p');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.25});els.forEach(function(el){io.observe(el)})}else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
